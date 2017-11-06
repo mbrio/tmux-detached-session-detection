@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DETACHED_COUNT_RES=`tmux ls | grep -v "(attached)" | wc -l`;
+DETACHED_COUNT_RES=`tmux ls 2> /dev/null | grep -v "(attached)" | wc -l`;
 DETACHED_COUNT=$((DETACHED_COUNT_RES + 0));
 
 if [[ $DETACHED_COUNT -gt 0 ]]; then
